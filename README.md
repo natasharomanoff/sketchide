@@ -9,6 +9,6 @@ $ bundle install
 $ rackup
 ```
 
-Now point your browser to http://localhost:9292
+Now point your browser to [http://localhost:9292](http://localhost:9292)
 
 
