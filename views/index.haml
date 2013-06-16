@@ -1,0 +1,25 @@
+.page-header
+  %h1
+    Sketches
+
+.row
+  .span6
+    %table.table
+      - @sketches.each do |s|
+        %tr
+          %td
+            %i.icon-file
+            %a{ :href => url("/sketches/#{s.id}") }= s.title  
+          %td.span0
+            %a{ :href => url("/sketches/live/#{s.id}"), :target => "_blank"}
+              %i.icon-play
+          %td.span0
+            %a{ :href => url("/sketches/#{s.id}/edit")}
+              %i.icon-edit
+          %td.span0
+            %a{ :href => "/sketches/#{s.id}/delete"}
+              %i.icon-trash
+  .well.span4.pull-right
+    .btn-group
+      %a.btn.btn-primary{ :href => url("/sketches/new")} New Sketch
+

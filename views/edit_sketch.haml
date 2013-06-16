@@ -1,0 +1,18 @@
+.page-header
+  %h1 Edit Sketch
+
+%form.form{:action => '/sketches', :method => 'POST'}
+  %input{:name => "_method", :type => "hidden", :value => "put"}
+  %input{:name => "id", :type => "hidden", :value => @sketch.id }
+  .control-group
+    %label.control-label{:for => "title"} Title
+    .controls
+      %input.span10{:name => 'title', :type => "text", :value => @sketch.title }
+  .control-group
+    %label.control-label{:for => "content"} Code
+    .controls
+      %textarea.span10{:name => "content", :rows => 10}= @sketch.content
+  .control-group
+    .controls
+      %button.btn.btn-primary{:type => "submit"} Save
+      %a.btn{ :href => url("/") } Cancel 

@@ -1,0 +1,27 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Sketchide
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+    %link{:href => url("/css/bootstrap.css"), :rel => "stylesheet"}
+    %link{:href => url("/css/app.css"), :rel => "stylesheet"}
+    %script{:src => url("/js/jquery.js")}
+    %script{:src => url("/js/bootstrap.js")}
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => url('/')} Sketchide
+          .nav-collapse.collapse
+            %ul.nav
+              %li.active
+                %a{:href => url('/')} Home
+    .container
+      = yield

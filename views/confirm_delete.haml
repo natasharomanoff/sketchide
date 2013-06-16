@@ -1,0 +1,13 @@
+.page-header
+  %h2= @sketch.title
+
+.alert.alert-block.alert-error.fade.in
+  %form{:action => url("/sketches/#{@sketch.id}"), :method => "post"}
+    %input{:name => "_method", :type => "hidden", :value => "delete"}
+    %button.close{"data-dismiss" => "alert", :type => "button"} ×
+    %h4.alert-heading Confirm Delete
+    %p Are you sure you want to delete this sketch?
+
+    %p
+      %input.btn.btn-danger{:type => "submit", :value => "Delete"}
+      %a.btn{:href => url("/") } Cancel

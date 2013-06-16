@@ -1,0 +1,16 @@
+.page-header
+  %h4= @sketch.title
+
+.well-transparent
+  .btn-group.pull-right
+    %a.btn.btn-info{ :href => url("/sketches/live/#{@sketch.id}"), :target => "_blank" } 
+      %i.icon-play.icon-white
+      Preview
+    %a.btn{ :href => url("/sketches/#{@sketch.id}/edit") } 
+      %i.icon-edit
+      Edit
+    %a.btn.btn-danger{ :href => url("/sketches/#{@sketch.id}/delete") } 
+      %i.icon-trash.icon-white
+      Delete
+
+%pre= @sketch.content

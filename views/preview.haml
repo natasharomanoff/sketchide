@@ -1,0 +1,8 @@
+!!!
+%html
+  %head
+    %title= @sketch.title
+    %script{:src => url("/js/processing-1.4.1.js")}
+  %body
+    %h1= @sketch.title
+    %canvas{"data-processing-sources" => url("/sketches/live/#{@sketch.id}.pde")}
